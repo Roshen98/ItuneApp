@@ -7,18 +7,18 @@
     android:paddingEnd="8dp">
 
     <TextView
-        android:id="@+id/tvTodoTitle"
-        android:layout_width="0dp"
+        android:id="@+id/addictAppNames"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Example"
-        android:textSize="24sp"
+        android:text="App names goes here"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cbDone"
+        app:layout_constraintEnd_toStartOf="@+id/removeApp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/cbDone"
+        android:id="@+id/removeApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

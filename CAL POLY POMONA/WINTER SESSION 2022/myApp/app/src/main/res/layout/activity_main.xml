@@ -7,35 +7,35 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvTodoItems"
+        android:id="@+id/addictedAppList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/etTodoTitle"
+        app:layout_constraintBottom_toTopOf="@+id/addictedApps"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
-        android:id="@+id/etTodoTitle"
+        android:id="@+id/addictedApps"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Enter Todo Title"
+        android:hint="App Used"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnAddTodo"
+        app:layout_constraintEnd_toStartOf="@+id/btnAdd"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnAddTodo"
+        android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Todo"
+        android:text="add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnDeleteDoneTodo" />
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete" />
 
     <Button
-        android:id="@+id/btnDeleteDoneTodo"
+        android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete done"
+        android:text="remove"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,26 +7,26 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var todoAdapter: TodoAdapter
+    private lateinit var addictionAdapter: AddictionAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        todoAdapter = TodoAdapter(mutableListOf())
+        addictionAdapter = AddictionAdapter(mutableListOf())
 
-        rvTodoItems.adapter = todoAdapter
-        rvTodoItems.layoutManager = LinearLayoutManager(this)
+        addictedAppList.adapter = addictionAdapter
+        addictedAppList.layoutManager = LinearLayoutManager(this)
 
-        btnAddTodo.setOnClickListener {
-            val todoTitle = etTodoTitle.text.toString()
+        btnAdd.setOnClickListener {
+            val todoTitle = addictedApps.text.toString()
             if(todoTitle.isNotEmpty()){
-                val todo = Todo(todoTitle)
-                todoAdapter.addTodo(todo)
-                etTodoTitle.text.clear()
+                val todo = Addiction(todoTitle)
+                addictionAdapter.addApp(todo)
+                addictedApps.text.clear()
             }
         }
-        btnDeleteDoneTodo.setOnClickListener {
-            todoAdapter.deleteDoneTodos()
+        btnDelete.setOnClickListener {
+            addictionAdapter.deleteApp()
         }
     }
 }
