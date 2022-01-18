@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.item_todo.view.*
 
 
 class TodoAdapter(
@@ -26,6 +27,18 @@ class TodoAdapter(
         )
     }
 
+    fun addTodo(todo: Todo){
+        todos.add(todo)
+        notifyItemInserted(todos.size - 1)
+    }
+
+    fun deleteDoneTodos(){
+        todos.removeAll { todo ->
+            todo.isChecked
+        }
+        notifyDataSetChanged()
+    }
+
     private fun toggleStrikeThrough(tvTodoTitle: TextView, isChecked: Boolean){
         if(isChecked){
             tvTodoTitle.paintFlags = tvTodoTitle.paintFlags or STRIKE_THRU_TEXT_FLAG
@@ -37,12 +50,17 @@ class TodoAdapter(
 
     }
 
-
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
 
         val curTodo = todos[position]
         holder.itemView.apply {
-
+            tvTodoTitle.text = curTodo.title
+            cbDone.isChecked = curTodo.isChecked
+            toggleStrikeThrough(tvTodoTitle, curTodo.isChecked)
+            cbDone.setOnCheckedChangeListener { _, isChecked ->
+                toggleStrikeThrough(tvTodoTitle, isChecked)
+                curTodo.isChecked = !curTodo.isChecked
+            }
         }
     }
 
