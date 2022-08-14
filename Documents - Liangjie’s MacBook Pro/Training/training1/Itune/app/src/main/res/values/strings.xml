@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Assignment-2</string>
+    <string name="song_name">song name</string>
+    <string name="song_author">song author</string>
+    <string name="song_cost">song cost</string>
+    <string name="rock">Rock</string>
+    <string name="classic">Classic</string>
+    <string name="pop">Pop</string>
+    <string name="song_image">song_image</string>
+</resources>
